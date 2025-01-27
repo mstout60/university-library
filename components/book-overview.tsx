@@ -3,6 +3,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import BookCover from "@/components/book-cover";
 
+interface Props extends Book {
+  userId: string;
+}
+
 const BookOverview = ({
   title,
   author,
@@ -13,7 +17,9 @@ const BookOverview = ({
   description,
   coverColor,
   coverUrl,
-}: Book) => {
+  id,
+  userId,
+}: Props) => {
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
